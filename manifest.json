@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Kate's Cat",
+  "version": "1.0",
+  "description": "An extension that adds a cute cat to your browser. When you hover over it, the cat, Gerald, gives you a compliment.",
+
+  "icons": {
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": ["<all_urls>"]
+    }
+  ], 
+
+  "web_accessible_resources": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "resources": [
+        "images/cat_awake.svg", 
+        "images/cat_sleeping.svg",
+        "images/cat_waking_up.svg",
+        "images/cat_going_sleep.svg"
+      ]
+    }
+  ]
+}
